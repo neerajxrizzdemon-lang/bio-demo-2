@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio-Inspired Technologies Gallery</title>
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --card-bg: #fff;
+    --text: #222;
+    --primary: #005c97;
+    --accent: #363795;
+    --shadow: rgba(0,0,0,0.15);
+  }
+  .dark {
+    --bg: #0e0f10;
+    --card-bg: #1b1d1f;
+    --text: #f3f3f3;
+    --primary: #4fa3ff;
+    --accent: #222;
+    --shadow: rgba(0,0,0,0.5);
+  }
+
+  * {box-sizing: border-box; margin: 0; padding: 0;}
+  body {background: var(--bg); color: var(--text); font-family: Arial, sans-serif; transition: 0.3s;}
+  header {background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; text-align:center; padding:35px 10px; font-size:2rem; font-weight:bold; position:relative;}
+  .toggle-btn {position:absolute; top:20px; right:25px; background:white; border:none; border-radius:25px; padding:8px 15px; cursor:pointer; font-weight:bold; color:#333; transition:0.3s;}
+  .dark .toggle-btn {background:#222; color:white;}
+  .toggle-btn:hover {transform: scale(1.08);}
+  .subtitle {text-align:center; margin-top: -10px; font-size:1.1rem; margin-bottom: 20px; color: var(--text);}
+  .container {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:25px; padding: 20px;}
+  .card {background: var(--card-bg); border-radius:14px; box-shadow:0 4px 20px var(--shadow); padding:20px; transition:0.3s; border: 2px solid transparent; cursor:pointer;}
+  .card:hover {transform: translateY(-5px); border-color: var(--primary);}
+  .card img {width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:15px; transition: transform 0.4s;}
+  .card:hover img {transform: scale(1.05);}
+  h3 {color: var(--primary); margin-bottom:10px;}
+  p {line-height:1.5; font-size:0.95rem;}
+  footer {text-align:center; padding:20px; background: var(--primary); color:white; margin-top:40px; font-size:1rem;}
+</style>
+</head>
+<body>
+
+<header>
+  Bio-Inspired Technologies Gallery
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+</header>
+
+<p class="subtitle">Discover engineering innovations inspired by nature</p>
+
+<div class="container" id="gallery">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Gecko_feet.jpg/640px-Gecko_feet.jpg" alt="Gecko Feet">
+    <h3>Gecko Feet → Smart Adhesives</h3>
+    <p>Microscopic hairs create strong but reversible adhesion. Engineers use this in robotic grippers and climbing pads.</p>
+  </div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Shark_skin_closeup.JPG/640px-Shark_skin_closeup.JPG" alt="Shark Skin">
+    <h3>Shark Skin → Anti-Bacterial Surfaces</h3>
+    <p>Shark skin textures reduce drag and prevent bacterial growth. Used in swimsuits, hospital coatings, and aircraft surfaces.</p>
+  </div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Lotus_leaf.jpg/640px-Lotus_leaf.jpg" alt="Lotus Leaf">
+    <h3>Lotus Leaf → Self-Cleaning Coatings</h3>
+    <p>Waxy, bumpy surfaces repel water and dirt. Inspires self-cleaning paints, solar panels, and fabrics.</p>
+  </div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Owl_wings.jpg/640px-Owl_wings.jpg" alt="Owl Wings">
+    <h3>Owl Wings → Silent Fans</h3>
+    <p>Serrated wing edges reduce noise. Applied in drones, fans, and wind turbines for quiet operation.</p>
+  </div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Termite_mound.jpg/640px-Termite_mound.jpg" alt="Termite Mounds">
+    <h3>Termite Mounds → Natural Cooling</h3>
+    <p>Airflow channels maintain temperature. Used in sustainable architecture for passive cooling without AC.</p>
+  </div>
+</div>
+
+<footer>Science Expo Project • Bio-Inspired Engineering</footer>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle("dark");
+  const btn = document.querySelector(".toggle-btn");
+  if(document.body.classList.contains("dark")){
+    btn.textContent="☀️ Light Mode";
+  } else { btn.textContent="🌙 Dark Mode"; }
+}
+</script>
+
+</body>
+</html>
